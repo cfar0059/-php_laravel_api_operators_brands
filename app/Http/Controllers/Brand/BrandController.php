@@ -96,6 +96,10 @@ class BrandController extends ApiController {
 			$brand->active = $request->active;
 		}
 
+		if ( $request->has( 'date' ) ) {
+			$brand->date = $request->date;
+		}
+
 		if ( ! $brand->isDirty() ) {
 			return $this->errorResponse( 'You need to specify a different value to update', 422 );
 		}
