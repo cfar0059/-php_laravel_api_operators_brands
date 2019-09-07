@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Transformers\BrandTransformer;
 use Illuminate\Database\Eloquent\Model;
 use App\Operator;
 
@@ -20,6 +21,9 @@ class Brand extends Model {
 		'active',
 		'date',
 	];
+
+	public $transformer = BrandTransformer::class;
+
 
 	public function setUrlAttribute( $url ) {
 		$this->attributes['url'] = strtolower( $url );

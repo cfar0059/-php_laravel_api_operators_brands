@@ -15,14 +15,25 @@ trait ApiResponser {
 	}
 
 	protected function showAll( Collection $collection, $code = 200 ) {
+
+		if ( $collection->isEmpty() ) {
+			return $this->successResponse( [ 'data' => $collection ], $code );
+		}
+
+		$transformer = $collection->first()->transformer;
+
 		$collection = $this->filterData( $collection );
 		$collection = $this->sortData( $collection );
+		$collection = $this->transformData( $collection, $transformer );
 
-		return $this->successResponse( [ 'data' => $collection ], $code );
+		return $this->successResponse( [ $collection ], $code );
 	}
 
-	protected function showOne( Model $model, $code = 200 ) {
-		return $this->successResponse( [ 'data' => $model ], $code );
+	protected function showOne( Model $instance, $code = 200 ) {
+		$transformer = $instance->transformer;
+		$instance    = $this->transformData( $instance, $transformer );
+
+		return $this->successResponse( [ $instance ], $code );
 	}
 
 	protected function sortData( Collection $collection ) {
@@ -37,14 +48,24 @@ trait ApiResponser {
 
 	protected function filterData( Collection $collection ) {
 		foreach ( request()->query() as $query => $value ) {
-			$attribute = $query;
+			if ( $query != 'sort_by' ) {
 
-			if ( isset( $attribute, $value ) ) {
-				$collection = $collection->where( $attribute, $value );
+				$attribute = $query;
+
+				if ( isset( $attribute, $value ) ) {
+					$collection = $collection->where( $attribute, $value );
+				}
 			}
 
 		}
 
 		return $collection;
+	}
+
+	protected function transformData( $data, $transformer ) {
+		$transformation = fractal( $data, new $transformer );
+
+		return $transformation->toArray();
+
 	}
 }

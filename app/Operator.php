@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Transformers\OperatorTransformer;
 use Illuminate\Database\Eloquent\Model;
 use App\Brand;
 
@@ -19,6 +20,8 @@ class Operator extends Model {
 		'active',
 		'date',
 	];
+
+	public $transformer = OperatorTransformer::class;
 
 	public function setUrlAttribute( $url ) {
 		$this->attributes['url'] = strtolower( $url ); //url is to be automatically transformed into Lowercase
