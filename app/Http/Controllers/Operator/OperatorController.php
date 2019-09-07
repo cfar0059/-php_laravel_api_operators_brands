@@ -30,14 +30,16 @@ class OperatorController extends ApiController {
 
 		$rules = [
 			'name'   => 'required',
-			'url'    => 'required', //Apply regex rule for URL Requirements ??
+			'url'    => 'required', //@todo: Apply regex rule for URL Requirements
 			'active' => 'required|boolean', //Has to be 1 or 0
-			'date'   => 'required|date', //Has to be with format yyyy-mm-dd
+			'date'   => 'date', //Has to be with format yyyy-mm-dd
 		];
 
 		$this->validate( $request, $rules );
 
 		$data = $request->all();
+
+		$data['date'] = !empty($data['date']) ? $data['date'] : date("Y-m-d");
 
 		$operator = Operator::create( $data );
 
@@ -91,6 +93,10 @@ class OperatorController extends ApiController {
 
 		if ( $request->has( 'active' ) ) {
 			$operator->active = $request->active;
+		}
+
+		if ( $request->has( 'date' ) ) {
+			$operator->date = $request->date;
 		}
 
 		if ( ! $operator->isDirty() ) {

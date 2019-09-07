@@ -30,15 +30,17 @@ class BrandController extends ApiController {
 	public function store( Request $request ) {
 		$rules = [
 			'name'        => 'required',
-			'url'         => 'required', //@todo: Apply regex rule for URL Requirements ??
-			'operator_id' => 'required', //@todo: Apply rule to see that operator extsts
+			'url'         => 'required', //@todo: Apply regex rule for URL Requirements
+			'operator_id' => 'required|exists:operators,id', //@todo: Apply rule to see that operator extsts
 			'active'      => 'required|boolean', //Has to be 1 or 0
-			'date'        => 'required|date', //Has to be with format yyyy-mm-dd
+			'date'        => 'date', //Has to be with format yyyy-mm-dd
 		];
 
 		$this->validate( $request, $rules );
 
 		$data = $request->all();
+
+		$data['date'] = ! empty( $data['date'] ) ? $data['date'] : date( "Y-m-d" );
 
 		$brand = Brand::create( $data );
 
@@ -73,7 +75,7 @@ class BrandController extends ApiController {
 			'name'        => 'max:255', // @todo: Add Regex to remove digits and underscores
 			'active'      => 'boolean', //Has to be 1 or 0
 			'date'        => 'date', //Has to be with format yyyy-mm-dd
-			'operator_id' => 'exists:operators,id', //Has to exists
+			'operator_id' => 'exists:operators,id', //Has to exist
 		];
 
 		$this->validate( $request, $rules );
