@@ -17,7 +17,7 @@ class BrandTransformer extends TransformerAbstract {
 			'name'        => (string) $brand->name,
 			'operator_id' => (int) $brand->operator_id,
 			'url'         => (string) $brand->url,
-			'active'      => (boolean) $brand->active,
+			'active'      => (string) $brand->active,
 			'date'        => $brand->date,
 		];
 	}

@@ -16,7 +16,7 @@ class OperatorTransformer extends TransformerAbstract {
 			'id'     => (int) $operator->id,
 			'name'   => (string) $operator->name,
 			'url'    => (string) $operator->url,
-			'active' => (boolean) $operator->active,
+			'active' => (string) $operator->active,
 			'date'   => $operator->date,
 		];
 	}

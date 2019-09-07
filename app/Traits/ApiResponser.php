@@ -53,13 +53,13 @@ trait ApiResponser {
 				$attribute = $query;
 
 				if ( isset( $attribute, $value ) ) {
-					$collection = $collection->where( $attribute, $value );
+					$collection = $collection->where( $attribute,'==', $value );
 				}
 			}
 
 		}
 
-		return $collection;
+		return $collection->values();
 	}
 
 	protected function transformData( $data, $transformer ) {
