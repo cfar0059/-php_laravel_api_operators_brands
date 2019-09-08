@@ -10,7 +10,7 @@ Step 2:  Consider cloning the repository into a Homestead folder within your "ho
 
 Step 3:  Once you have cloned the Homestead repository, run the bash init.sh command from the Homestead directory to create the Homestead.yaml configuration file.  bash init.sh
 
-Step 4:  In the Homestead.yaml file add the following lines under sites and save the file:
+Step 4:  In the Homestead.yaml file add the following lines under sites and save the file (IMPORTANT - Make sure that code is inline as per other lines.):
     - map: restfulapi.test
       to: /home/vagrant/Code/restfulapi/public
       
