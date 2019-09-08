@@ -18,8 +18,14 @@ class DatabaseSeeder extends Seeder {
 		Operator::truncate();
 		Brand::truncate();
 
-		$this->call(OperatorsTableSeeder::class);
-		$this->call(BrandsTableSeeder::class);
+		//		$this->call(OperatorsTableSeeder::class);
+		//		$this->call(BrandsTableSeeder::class);
+
+		$operatorQuanity = 1000;
+		$brandQuantity   = 1000;
+
+		factory( Operator::class, $operatorQuanity )->create();
+		factory( Brand::class, $brandQuantity )->create();
 
 	}
 }
