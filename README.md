@@ -41,3 +41,4 @@ Step 13: go back to .env file and change DB_HOST to DB_HOST=localhost
 Step 14: Things should be running.  Tests - GET, POST and PATCH methods have been conducted through the use of PostMan.
 
 
+Important note for Sorting - Sorting is done through parameter 'sort_by'.  
