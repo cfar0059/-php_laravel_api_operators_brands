@@ -14,5 +14,30 @@ Step 4:  In the Homestead.yaml file add the following lines under sites and save
     - map: restfulapi.test
       to: /home/vagrant/Code/restfulapi/public
       
-Step 5:  Copy the contents of the git Repository in the folder found in your home directory called "code/restfulapi" created by homestead.
+Step 5: Run vagrant up
+
+Step 6: Run vagrant provision
+     
+Step 7: Run vagrant ssh to access Homestead
+
+Step 8: Change directory to 'Code' Folder and type in laravel new restfulapi
+
+Step 9: Once the Laravel installation is complete head over to the local machine and copy the contents from the git repository into the ~/Code/restfulapi
+
+Step 10: Head over to Homestead and run - php artisan serve
+
+Step 11: Find the .env file and input DB information:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=33060
+DB_DATABASE=restfulapi
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+Step 12: Run - php artisan migrate:refresh --seed
+
+Step 13: go back to .env file and change DB_HOST to DB_HOST=localhost
+
+Step 14: Things should be running.  Tests - GET, POST and PATCH methods have been conducted through the use of PostMan.
+
 
