@@ -1,4 +1,4 @@
-#PHP Developer Test Task
+PHP Developer Test Task
 
 Introduction
 With this test we want to get an idea of your proficiency in backend related web development technologies. We will give you a task specification below and you are free to use whatever PHP libraries, frameworks etc. you consider as useful to implement it together with SQL database (preferably MySQL or SQLite). You shall provide us with a hosted git repository of your resulting work including a readme file to describe the required steps to deploy it locally.
