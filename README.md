@@ -1,44 +1,15 @@
-# restfulapi
- 
-The REST API is built with Laravel.
- 
-Requirements: Before launching your Homestead environment, you must install VirtualBox 6.x, VMWare, Parallels or Hyper-V as well as Vagrant. In my case I opted to use Virtual Box.
+#PHP Developer Test Task
 
-Step 1:  Once Virtual Box and Vagrant have been installed add the laravel/homstead using the following command in the terminal. vagrant box add laravel/homestead
+Introduction
+With this test we want to get an idea of your proficiency in backend related web development technologies. We will give you a task specification below and you are free to use whatever PHP libraries, frameworks etc. you consider as useful to implement it together with SQL database (preferably MySQL or SQLite). You shall provide us with a hosted git repository of your resulting work including a readme file to describe the required steps to deploy it locally.
 
-Step 2:  Consider cloning the repository into a Homestead folder within your "home" directory.  Enter the following command - git clone https://github.com/laravel/homestead.git ~/Homestead
+Task
+Implement REST API without authentication with following endpoints:
 
-Step 3:  Once you have cloned the Homestead repository, run the bash init.sh command from the Homestead directory to create the Homestead.yaml configuration file.  bash init.sh
-
-Step 4:  In the Homestead.yaml file add the following lines under sites and save the file (IMPORTANT - Make sure that code is inline as per other lines.):
-    - map: restfulapi.test
-      to: /home/vagrant/Code/restfulapi/public
-      
-Step 5: Run vagrant up
-
-Step 6: Run vagrant provision
-     
-Step 7: Run vagrant ssh to access Homestead
-
-Step 8: Change directory to 'Code' Folder and type in laravel new restfulapi
-
-Step 9: Once the Laravel installation is complete head over to the local machine and copy the contents from the git repository into the ~/Code/restfulapi
-
-Step 10: Head over to Homestead and run - php artisan serve
-
-Step 11: Find the .env file and input DB information:
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=33060
-DB_DATABASE=restfulapi
-DB_USERNAME=homestead
-DB_PASSWORD=secret
-
-Step 12: Run - php artisan migrate:refresh --seed
-
-Step 13: go back to .env file and change DB_HOST to DB_HOST=localhost
-
-Step 14: Things should be running.  Tests - GET, POST and PATCH methods have been conducted through the use of PostMan.
-
-
-Important note for Sorting - Sorting is done through parameter 'sort_by'.  
+Add new Operator (name, url, active 0/1, date)
+Add new Brand related to the Operator (name, url, operator_id, active 0/1, date)
+Update details of the Operator
+Update details of the Brand
+Collect a list of brands (filter and sort by name, active and date)
+Collect a list of operators (filter and sort by name, active and date)
+Assume that there is more 10,000,000 records in DB. You can use any kind of framework and libraries to complete this task.
