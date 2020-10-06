@@ -13,3 +13,12 @@ Implement REST API without authentication with following endpoints:
 5. Collect a list of brands (filter and sort by name, active and date)
 6. Collect a list of operators (filter and sort by name, active and date)
 
+### Endpoints
+Method	URI	Description
+
+1. GET	api/brands	Collect a list of brands (incl. filtering and sorting)
+2. GET	api/operators	Collect a list of operators (incl. filtering and sorting)
+3. POST	api/operators	Add new Operator
+4. PUT	api/operators/{operator}	Update details of the Operator
+5. POST	api/operators/{operator}/brands	Add new Brand for Operator
+6. PUT	api/operators/{operator}/brands/{brand}	Update details of the Brand
