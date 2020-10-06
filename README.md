@@ -6,10 +6,10 @@ With this test we want to get an idea of your proficiency in backend related web
 ### Task
 Implement REST API without authentication with following endpoints:
 
-Add new Operator (name, url, active 0/1, date)
-Add new Brand related to the Operator (name, url, operator_id, active 0/1, date)
-Update details of the Operator
-Update details of the Brand
-Collect a list of brands (filter and sort by name, active and date)
-Collect a list of operators (filter and sort by name, active and date)
+1. Add new Operator (name, url, active 0/1, date)
+2. Add new Brand related to the Operator (name, url, operator_id, active 0/1, date)
+3. Update details of the Operator
+4. Update details of the Brand
+5. Collect a list of brands (filter and sort by name, active and date)
+6. Collect a list of operators (filter and sort by name, active and date)
 
