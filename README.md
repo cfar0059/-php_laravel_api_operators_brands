@@ -12,4 +12,4 @@ Update details of the Operator
 Update details of the Brand
 Collect a list of brands (filter and sort by name, active and date)
 Collect a list of operators (filter and sort by name, active and date)
-Assume that there is more 10,000,000 records in DB. You can use any kind of framework and libraries to complete this task.
+
